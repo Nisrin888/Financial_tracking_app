@@ -13,6 +13,7 @@ const { AppError } = require('../middleware/errorHandler');
  */
 exports.getProfile = async (req, res, next) => {
   try {
+    // Fetch user data from database using the authenticated user's ID
     const user = await User.findById(req.user.id);
 
     res.status(200).json({
@@ -20,6 +21,7 @@ exports.getProfile = async (req, res, next) => {
       data: user
     });
   } catch (error) {
+    // Pass any errors to the global error handler middleware
     next(error);
   }
 };
@@ -43,7 +45,7 @@ exports.updateProfile = async (req, res, next) => {
     if (req.body.email || req.body.password || req.body.passwordHash) {
       return next(new AppError('Use appropriate endpoints to update email or password', 400));
     }
-
+ // Initialize updates object to store only allowed fields
     const user = await User.findByIdAndUpdate(
       req.user.id,
       updates,
@@ -52,7 +54,7 @@ exports.updateProfile = async (req, res, next) => {
         runValidators: true
       }
     );
-
+// Return success response with updated user data
     res.status(200).json({
       status: 'success',
       data: user,
@@ -204,8 +206,9 @@ exports.updateUser = async (req, res, next) => {
  */
 exports.deleteUser = async (req, res, next) => {
   try {
+     // Find user by ID from URL parameters
     const user = await User.findById(req.params.id);
-
+// Verify user exists before attempting deletion
     if (!user) {
       return next(new AppError('User not found', 404));
     }
@@ -213,7 +216,7 @@ exports.deleteUser = async (req, res, next) => {
     // Soft delete
     user.isActive = false;
     await user.save();
-
+ // Return success response
     res.status(200).json({
       status: 'success',
       message: 'User deleted successfully'

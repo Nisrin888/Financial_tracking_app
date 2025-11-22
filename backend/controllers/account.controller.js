@@ -1,3 +1,5 @@
+// Account Controller - manages financial account operations (bank, credit card, cash)
+// Handles account CRUD operations, balance calculations, and transaction management
 const Account = require('../models/account.model');
 const { validationResult } = require('express-validator');
 

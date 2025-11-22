@@ -1,7 +1,6 @@
-/**
- * Authentication Controller
- * Handles user registration, login, logout, password reset
- */
+// Authentication Controller - manages user authentication and authorization
+// Handles user registration, login, logout, password reset, and token management
+// Supports both email/password and OAuth (Google) authentication
 
 const User = require('../models/User.model');
 const Category = require('../models/category.model');

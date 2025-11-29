@@ -1,7 +1,0 @@
-.env
-node_modules/
-.env.local
-.env.production
-.env.development
-backend/uploads/
-.env.backup

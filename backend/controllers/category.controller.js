@@ -1,3 +1,11 @@
+/**
+ * Category Controller
+ * Manages creation, retrieval, updating, and deletion of user categories.
+ * Handles validation, duplicate checks, icon/color assignment, and linked transaction cleanup.
+ * All category operations are private and scoped to the authenticated user.
+ */
+
+
 const Category = require('../models/category.model');
 const { validationResult } = require('express-validator');
 

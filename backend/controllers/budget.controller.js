@@ -1,3 +1,11 @@
+/**
+ * Budget Controller
+ * Handles creation, retrieval, update, and deletion of user budgets.
+ * Manages budget validation, progress tracking, alerts, and category linkage.
+ * All operations require user authentication and support filtering & pagination.
+ */
+
+
 const Budget = require('../models/budget.model');
 const Category = require('../models/category.model');
 const { validationResult } = require('express-validator');

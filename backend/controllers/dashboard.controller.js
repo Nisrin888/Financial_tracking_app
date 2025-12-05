@@ -1,3 +1,12 @@
+/**
+ * Dashboard Controller
+ * Aggregates and delivers all high-level financial data for the dashboard views.
+ * Handles summaries, spending breakdowns, trends, recent transactions,
+ * budget insights, account balances, and full combined dashboard payloads.
+ * All endpoints require authentication and optimize performance using parallel queries.
+ */
+
+
 const Transaction = require('../models/transaction.model');
 const Account = require('../models/account.model');
 const Budget = require('../models/budget.model');

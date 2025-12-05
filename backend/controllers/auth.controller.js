@@ -1,6 +1,10 @@
-// Authentication Controller - manages user authentication and authorization
-// Handles user registration, login, logout, password reset, and token management
-// Supports both email/password and OAuth (Google) authentication
+/**
+ * Authentication Controller
+ * Manages all user authentication and authorization workflows.
+ * Includes registration, login, logout, token generation/refresh,
+ * OAuth (Google), password management, profile updates, and data export.
+ */
+
 
 const User = require('../models/User.model');
 const Category = require('../models/category.model');

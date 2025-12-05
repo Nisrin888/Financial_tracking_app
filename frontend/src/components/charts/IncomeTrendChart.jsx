@@ -1,5 +1,5 @@
 /**
- * Income vs Expense Trend Chart
+ * Income vs Expense Trend Chart finalised 
  */
 
 import {
